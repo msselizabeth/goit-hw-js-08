@@ -28,6 +28,21 @@ function createGalleryItems (galleryItems) {
 }).join('');
 }
 
+function onGalleryItemClick(event){
+    event.preventDefault();
+
+    if (!event.target.classList.contains("gallery__image")) {
+        return;
+      }
+
+      const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+`)
+
+    instance.show();
+
+}
+
 
 
 
