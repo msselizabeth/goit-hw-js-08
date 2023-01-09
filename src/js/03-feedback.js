@@ -11,10 +11,13 @@ refs.form.addEventListener( 'submit', onSubmit);
 
 onUploadPage();
 
-const formData = {};
+let formData = {};
 
 function onFormData(e) {
-  formData[e.target.name] = e.target.value;
+  formData = {
+    email: refs.email.value,
+    message: refs.message.value
+  }
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
 
